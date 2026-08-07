@@ -623,6 +623,61 @@
         font-weight: 600;
       }
 
+      .contact-pill {
+        margin-top: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        background: rgba(245,34,108,0.06);
+        padding: 12px 14px;
+        border-left: 3px solid transparent;
+        border-image: var(--grad-ig) 1;
+        border-radius: 0 8px 8px 0;
+        transition: background 0.3s ease, transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 0.96rem;
+        font-weight: 600;
+      }
+
+      .contact-pill::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--grad-ig);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-pill:hover {
+        transform: translateX(4px);
+        background: rgba(245,34,108,0.12);
+      }
+
+      .contact-pill i,
+      .contact-pill span,
+      .contact-pill a {
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-pill i {
+        color: var(--ig-pink);
+      }
+
+      .contact-pill span {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .contact-pill a {
+        color: var(--soft);
+        font-weight: 700;
+      }
+
       /* ─── HOBBIES LIST (below profile photo in left column) ─── */
       .hobbies-list {
         margin-top: 14px;
@@ -2426,6 +2481,12 @@
                 </div>
               </div>
 
+              <div class="contact-pill" role="group" aria-label="Contacto telefónico">
+                <i class="fa-solid fa-phone"></i>
+                <span>Contacto:</span>
+                <a href="tel:+593998792528">+593 99 879 2528</a>
+              </div>
+
               <div class="sobre-mi-block" style="margin-top: 20px;">
                 <strong style="display:block; margin-bottom: 12px; color: #ffffff;">Sobre mi:</strong>
                 <ul class="hobbies-list">
@@ -2703,7 +2764,13 @@
           function showTopic(topicId) {
             const topic = topics[topicId];
             if (!topic) return;
-            detail.innerHTML = `<p class="topic-kicker">Resumen del tema</p><h3><i class="fa-solid fa-book-open"></i> ${topic.title}</h3><p>${topic.summary}</p><p>${topic.explanation}</p><div class="example-box"><strong>Ejemplo:</strong><br>${topic.example.replace(/\n/g, "<br>")}</div>`;
+            detail.innerHTML = `
+              <p class="topic-kicker">Resumen del tema</p>
+              <h3><i class="fa-solid fa-book-open"></i> ${topic.title}</h3>
+              <p>${topic.summary}</p>
+              ${topic.explanation ? `<p>${topic.explanation}</p>` : ""}
+              <div class="example-box"><strong>Ejemplo:</strong><br>${topic.example.replace(/\n/g, "<br>")}</div>
+            `;
             buttons.forEach((button) => {
               const selected = button.dataset.topic === topicId;
               button.classList.toggle("active", selected);
