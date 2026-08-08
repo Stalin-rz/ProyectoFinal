@@ -2567,7 +2567,6 @@
                 <button class="topic-button active" type="button" role="tab" aria-selected="true" data-topic="u1-arquitecturas"><i class="fa-solid fa-microchip"></i> Von Neumann y Harvard</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u1-so"><i class="fa-solid fa-desktop"></i> Sistemas operativos</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u1-numeracion"><i class="fa-solid fa-arrow-right-arrow-left"></i> Sistemas de numeración</button>
-                <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u1-aritmetica"><i class="fa-solid fa-calculator"></i> Aritmética binaria</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u1-bool"><i class="fa-solid fa-code-branch"></i> Álgebra de Boole</button>
               </div>
             </aside>
@@ -2654,6 +2653,7 @@
               <div class="topic-list" role="tablist" aria-label="Temas de la Unidad 3">
                 <button class="topic-button active" type="button" role="tab" aria-selected="true" data-topic="u3-paradigmas"><i class="fa-solid fa-code"></i> Lenguajes y paradigmas</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u3-python"><i class="fa-brands fa-python"></i> Introducción a Python</button>
+                <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u3-aritmetica"><i class="fa-solid fa-calculator"></i> Aritmética binaria</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u3-operadores"><i class="fa-solid fa-not-equal"></i> Operadores</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u3-control"><i class="fa-solid fa-route"></i> Estructuras de control</button>
                 <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="u3-condicionales"><i class="fa-solid fa-code-branch"></i> Condicionales</button>
@@ -2735,6 +2735,11 @@
             title: "Introducción a Python",
             summary: "Python es un lenguaje de programación de alto nivel, interpretado, de propósito general y con tipado dinámico, creado por Guido van Rossum en 1991. Su filosofía de diseño prioriza la legibilidad del código (Zen de Python). Características principales: sintaxis limpia que usa indentación obligatoria en lugar de llaves para delimitar bloques, tipado dinámico (no se declaran tipos), interpretado (ejecuta línea por línea sin compilar), multiplataforma y con una enorme biblioteca estándar. En Python, los tipos de datos básicos son: int (enteros), float (decimales), str (cadenas de texto), bool (booleanos), list (listas), tuple (tuplas), dict (diccionarios) y set (conjuntos). Las variables se declaran simplemente asignando un valor. Es el lenguaje más utilizado en inteligencia artificial, ciencia de datos y automatización.",
             example: "nombre = 'Stalin'\nedad = 17\naltura = 1.75\nes_estudiante = True\nprint(f'Hola {nombre}, tienes {edad} años y mides {altura}m')"
+          },
+          "u3-aritmetica": {
+            title: "Aritmética Binaria",
+            summary: "La aritmética binaria es el conjunto de operaciones matemáticas (suma, resta, multiplicación y división) realizadas con números en base 2. Es la base de todo cálculo en hardware digital. En la suma binaria las reglas son: 0+0=0, 0+1=1, 1+0=1, y 1+1=10 (resultado 0 con acarreo 1). La resta se puede realizar directamente o usando el complemento a 2, que es el método preferido en hardware porque convierte la resta en una suma. El complemento a 2 de un número se obtiene invirtiendo todos sus bits y sumando 1. La multiplicación binaria sigue la misma lógica que la decimal pero multiplicando solo por 0 o 1. Estas operaciones son ejecutadas por la ALU (Unidad Aritmético-Lógica) del procesador.",
+            example: "Suma:  1011 (11) + 0101 (5) = 10000 (16)\nComplemento a 2 de 0101 (5): invertir→1010, +1→1011 = -5 en representación con signo"
           },
           "u3-operadores": {
             title: "Operadores en Python",
